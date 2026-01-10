@@ -1,0 +1,11 @@
+# environment variables
+.env
+
+#dataset
+dataset
+
+#visualizing figures
+figures
+
+#logger
+logs/project.log

@@ -1,0 +1,9 @@
+monai
+transformers
+huggingface_hub
+kaggle
+kagglehub
+dotenv
+nibabel
+matplotlib
+scikit-image

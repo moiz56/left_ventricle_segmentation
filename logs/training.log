@@ -1,0 +1,1 @@
+2026-01-11 03:55:01,739 - INFO - train - Train batch shapes: images=torch.Size([16, 1, 224, 224]), masks=torch.Size([16, 1, 224, 224])

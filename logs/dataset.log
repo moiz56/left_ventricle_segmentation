@@ -1,0 +1,46 @@
+2026-01-11 03:52:19,366 - INFO - dataset.py - Initialized CardiacMRIDataset: 637 samples
+2026-01-11 03:52:19,366 - INFO - dataset.py - Augmentation enabled: True
+2026-01-11 03:52:19,369 - INFO - dataset.py - Sample 0: image=Case_N006.nii_slice_000.npy (224, 224), mask=Case_N006.nii_slice_000.npy (224, 224)
+2026-01-11 03:52:19,371 - INFO - dataset.py - Sample 1: image=Case_N006.nii_slice_001.npy (224, 224), mask=Case_N006.nii_slice_001.npy (224, 224)
+2026-01-11 03:52:19,372 - INFO - dataset.py - Sample 2: image=Case_N006.nii_slice_003.npy (224, 224), mask=Case_N006.nii_slice_003.npy (224, 224)
+2026-01-11 03:52:19,373 - INFO - dataset.py - Sample 3: image=Case_N006.nii_slice_004.npy (224, 224), mask=Case_N006.nii_slice_004.npy (224, 224)
+2026-01-11 03:52:19,374 - INFO - dataset.py - Sample 4: image=Case_N006.nii_slice_005.npy (224, 224), mask=Case_N006.nii_slice_005.npy (224, 224)
+2026-01-11 03:52:19,375 - INFO - dataset.py - Initialized CardiacMRIDataset: 71 samples
+2026-01-11 03:52:19,375 - INFO - dataset.py - Augmentation enabled: False
+2026-01-11 03:52:19,377 - INFO - dataset.py - Sample 0: image=Case_N006.nii_slice_002.npy (224, 224), mask=Case_N006.nii_slice_002.npy (224, 224)
+2026-01-11 03:52:19,378 - INFO - dataset.py - Sample 1: image=Case_N012.nii_slice_001.npy (224, 224), mask=Case_N012.nii_slice_001.npy (224, 224)
+2026-01-11 03:52:19,379 - INFO - dataset.py - Sample 2: image=Case_N012.nii_slice_002.npy (224, 224), mask=Case_N012.nii_slice_002.npy (224, 224)
+2026-01-11 03:52:19,380 - INFO - dataset.py - Sample 3: image=Case_N018.nii_slice_005.npy (224, 224), mask=Case_N018.nii_slice_005.npy (224, 224)
+2026-01-11 03:52:19,381 - INFO - dataset.py - Sample 4: image=Case_N020.nii_slice_002.npy (224, 224), mask=Case_N020.nii_slice_002.npy (224, 224)
+2026-01-11 03:52:19,469 - INFO - dataset.py - Sample 3 processed: img shape torch.Size([1, 224, 224]), mask shape torch.Size([1, 224, 224])
+2026-01-11 03:54:34,926 - INFO - dataset.py - Initialized CardiacMRIDataset: 637 samples
+2026-01-11 03:54:34,927 - INFO - dataset.py - Augmentation enabled: True
+2026-01-11 03:54:34,929 - INFO - dataset.py - Sample 0: image=Case_N006.nii_slice_000.npy (224, 224), mask=Case_N006.nii_slice_000.npy (224, 224)
+2026-01-11 03:54:34,930 - INFO - dataset.py - Sample 1: image=Case_N006.nii_slice_001.npy (224, 224), mask=Case_N006.nii_slice_001.npy (224, 224)
+2026-01-11 03:54:34,931 - INFO - dataset.py - Sample 2: image=Case_N006.nii_slice_003.npy (224, 224), mask=Case_N006.nii_slice_003.npy (224, 224)
+2026-01-11 03:54:34,932 - INFO - dataset.py - Sample 3: image=Case_N006.nii_slice_004.npy (224, 224), mask=Case_N006.nii_slice_004.npy (224, 224)
+2026-01-11 03:54:34,933 - INFO - dataset.py - Sample 4: image=Case_N006.nii_slice_005.npy (224, 224), mask=Case_N006.nii_slice_005.npy (224, 224)
+2026-01-11 03:54:34,934 - INFO - dataset.py - Initialized CardiacMRIDataset: 71 samples
+2026-01-11 03:54:34,934 - INFO - dataset.py - Augmentation enabled: False
+2026-01-11 03:54:34,936 - INFO - dataset.py - Sample 0: image=Case_N006.nii_slice_002.npy (224, 224), mask=Case_N006.nii_slice_002.npy (224, 224)
+2026-01-11 03:54:34,937 - INFO - dataset.py - Sample 1: image=Case_N012.nii_slice_001.npy (224, 224), mask=Case_N012.nii_slice_001.npy (224, 224)
+2026-01-11 03:54:34,938 - INFO - dataset.py - Sample 2: image=Case_N012.nii_slice_002.npy (224, 224), mask=Case_N012.nii_slice_002.npy (224, 224)
+2026-01-11 03:54:34,939 - INFO - dataset.py - Sample 3: image=Case_N018.nii_slice_005.npy (224, 224), mask=Case_N018.nii_slice_005.npy (224, 224)
+2026-01-11 03:54:34,940 - INFO - dataset.py - Sample 4: image=Case_N020.nii_slice_002.npy (224, 224), mask=Case_N020.nii_slice_002.npy (224, 224)
+2026-01-11 03:55:01,679 - INFO - dataset.py - Initialized CardiacMRIDataset: 637 samples
+2026-01-11 03:55:01,679 - INFO - dataset.py - Augmentation enabled: True
+2026-01-11 03:55:01,680 - INFO - dataset.py - Sample 0: image=Case_N006.nii_slice_000.npy (224, 224), mask=Case_N006.nii_slice_000.npy (224, 224)
+2026-01-11 03:55:01,680 - INFO - dataset.py - Sample 1: image=Case_N006.nii_slice_001.npy (224, 224), mask=Case_N006.nii_slice_001.npy (224, 224)
+2026-01-11 03:55:01,681 - INFO - dataset.py - Sample 2: image=Case_N006.nii_slice_003.npy (224, 224), mask=Case_N006.nii_slice_003.npy (224, 224)
+2026-01-11 03:55:01,681 - INFO - dataset.py - Sample 3: image=Case_N006.nii_slice_004.npy (224, 224), mask=Case_N006.nii_slice_004.npy (224, 224)
+2026-01-11 03:55:01,681 - INFO - dataset.py - Sample 4: image=Case_N006.nii_slice_005.npy (224, 224), mask=Case_N006.nii_slice_005.npy (224, 224)
+2026-01-11 03:55:01,682 - INFO - dataset.py - Initialized CardiacMRIDataset: 71 samples
+2026-01-11 03:55:01,682 - INFO - dataset.py - Augmentation enabled: False
+2026-01-11 03:55:01,683 - INFO - dataset.py - Sample 0: image=Case_N006.nii_slice_002.npy (224, 224), mask=Case_N006.nii_slice_002.npy (224, 224)
+2026-01-11 03:55:01,683 - INFO - dataset.py - Sample 1: image=Case_N012.nii_slice_001.npy (224, 224), mask=Case_N012.nii_slice_001.npy (224, 224)
+2026-01-11 03:55:01,683 - INFO - dataset.py - Sample 2: image=Case_N012.nii_slice_002.npy (224, 224), mask=Case_N012.nii_slice_002.npy (224, 224)
+2026-01-11 03:55:01,683 - INFO - dataset.py - Sample 3: image=Case_N018.nii_slice_005.npy (224, 224), mask=Case_N018.nii_slice_005.npy (224, 224)
+2026-01-11 03:55:01,684 - INFO - dataset.py - Sample 4: image=Case_N020.nii_slice_002.npy (224, 224), mask=Case_N020.nii_slice_002.npy (224, 224)
+2026-01-11 03:55:25,426 - INFO - dataset.py - Sample 1 processed: img shape torch.Size([1, 224, 224]), mask shape torch.Size([1, 224, 224])
+2026-01-11 03:55:33,463 - INFO - dataset.py - Sample 0 processed: img shape torch.Size([1, 224, 224]), mask shape torch.Size([1, 224, 224])
+2026-01-11 03:57:17,460 - INFO - dataset.py - Sample 2 processed: img shape torch.Size([1, 224, 224]), mask shape torch.Size([1, 224, 224])
