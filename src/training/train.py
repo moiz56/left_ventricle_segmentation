@@ -5,6 +5,10 @@ from monai.metrics import DiceMetric
 from monai.transforms import AsDiscrete
 from monai.data import decollate_batch
 from monai.losses import DiceCELoss
+from pathlib import Path
+from src.utils.load_yaml import get_yaml
+
+import os
 
 from src.data.cardiac_mri_dataset import CardiacMRIDataset
 from src.models.attention_unet import attention_unet
@@ -12,7 +16,7 @@ from logs.logger import get_logger
 from constants import TRAIN_ANNOT_DIR, TRAIN_IMAGE_DIR, VAL_ANNOT_DIR, VAL_IMG_DIR
 
 logger = get_logger(name="train", log_file="logs/training.log")
-
+cfg = get_yaml()
 
 def train_model(model, train_loader, val_loader, optimizer, device, num_epochs=50, save_path="best_model.pth"):
     """
@@ -95,12 +99,20 @@ def train_model(model, train_loader, val_loader, optimizer, device, num_epochs=5
 
 def main():
     try:
+
+        lr = cfg["lr"]
+        batch_size = cfg["batch_size"]
+        save_path = os.path.join(Path(__file__).resolve().parents[2],"registry", cfg["model_save_path"])
+        num_epochs = cfg["num_epochs"]
+
+        print(save_path)
+
         # Initialize datasets
         dataset_train = CardiacMRIDataset(TRAIN_IMAGE_DIR, TRAIN_ANNOT_DIR, augment=True)
         dataset_val = CardiacMRIDataset(VAL_IMG_DIR, VAL_ANNOT_DIR, augment=False)
 
-        train_loader = DataLoader(dataset_train, batch_size=16, shuffle=True)
-        val_loader = DataLoader(dataset_val, batch_size=16, shuffle=False)
+        train_loader = DataLoader(dataset_train, batch_size=batch_size, shuffle=True)
+        val_loader = DataLoader(dataset_val, batch_size=batch_size, shuffle=False)
 
         # Log batch shapes
         imgs, masks = next(iter(train_loader))
@@ -112,10 +124,10 @@ def main():
         model.to(device)
 
         # Optimizer
-        optimizer = optim.Adam(model.parameters(), lr=1e-4)
+        optimizer = optim.Adam(model.parameters(), lr=lr)
 
         # Start training
-        history = train_model(model, train_loader, val_loader, optimizer, device, num_epochs=100, save_path="best_model.pth")
+        history = train_model(model, train_loader, val_loader, optimizer, device, num_epochs=num_epochs, save_path=save_path)
 
     except Exception as e:
         logger.exception("Training failed: %s", e)

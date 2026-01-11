@@ -1,2 +1,6 @@
 seed: 42
 split_ratio: 0.9
+model_save_path: "attention_unet.pth"
+lr : 1e-4
+batch_size: 16
+num_epochs: 50
