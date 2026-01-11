@@ -100,7 +100,7 @@ def train_model(model, train_loader, val_loader, optimizer, device, num_epochs=5
 def main():
     try:
 
-        lr = cfg["lr"]
+        lr = float(cfg["lr"])
         batch_size = cfg["batch_size"]
         save_path = os.path.join(Path(__file__).resolve().parents[2],"registry", cfg["model_save_path"])
         num_epochs = cfg["num_epochs"]
