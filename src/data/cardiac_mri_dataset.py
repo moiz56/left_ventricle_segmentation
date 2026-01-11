@@ -1,15 +1,17 @@
 import numpy as np
 import torch
-from torch.utils.data import Dataset
+from torch.utils.data import Dataset, DataLoader
 import torchvision.transforms.functional as F
 import random
 from pathlib import Path
 from logs.logger import get_logger
 
 from constants import TRAIN_ANNOT_DIR, TRAIN_IMAGE_DIR, VAL_ANNOT_DIR, VAL_IMG_DIR
+from src.utils.load_yaml import get_yaml
 
 # Initialize logger
 logger = get_logger(name="dataset.py", log_file="logs/dataset.log")
+cfg = get_yaml()
 
 class CardiacMRIDataset(Dataset):
     def __init__(self, image_dir, mask_dir, augment=False, log_samples=5):
@@ -103,7 +105,18 @@ class CardiacMRIDataset(Dataset):
             logger.exception(f"Failed to load or process sample {idx}: {e}")
             raise
 
-# ===== Test dataset logging =====
+def prepare_data(train_image_dir,train_annot_dir,val_img_dir,val_annot_dir,batch_size = cfg["batch_size"]):
+
+    dataset_train = CardiacMRIDataset(train_image_dir, train_annot_dir, augment=True)
+    dataset_val = CardiacMRIDataset(val_img_dir,val_annot_dir,augment=False)
+
+    train_loader = DataLoader(dataset_train, batch_size=batch_size, shuffle=True, num_workers=4)
+    val_loader = DataLoader(dataset_val, batch_size=batch_size, shuffle=False, num_workers=4)
+
+    return train_loader, val_loader
+
+
+
 if __name__ == "__main__":
     try:
         dataset_train = CardiacMRIDataset(

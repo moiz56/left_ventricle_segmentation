@@ -13,7 +13,7 @@ import os
 from src.data.cardiac_mri_dataset import CardiacMRIDataset
 from src.models.attention_unet import attention_unet
 from logs.logger import get_logger
-from constants import TRAIN_ANNOT_DIR, TRAIN_IMAGE_DIR, VAL_ANNOT_DIR, VAL_IMG_DIR
+from constants import TRAIN_ANNOT_DIR, TRAIN_IMAGE_DIR, VAL_ANNOT_DIR, VAL_IMG_DIR, SPLIT_DIR
 
 logger = get_logger(name="train", log_file="logs/training.log")
 cfg = get_yaml()
@@ -102,10 +102,9 @@ def main():
 
         lr = float(cfg["lr"])
         batch_size = cfg["batch_size"]
+        os.makedirs(os.path.join(Path(__file__).resolve().parents[2],"registry"),exist_ok=True)
         save_path = os.path.join(Path(__file__).resolve().parents[2],"registry", cfg["model_save_path"])
         num_epochs = cfg["num_epochs"]
-
-        print(save_path)
 
         # Initialize datasets
         dataset_train = CardiacMRIDataset(TRAIN_IMAGE_DIR, TRAIN_ANNOT_DIR, augment=True)

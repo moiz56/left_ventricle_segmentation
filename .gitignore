@@ -6,14 +6,18 @@ __pycache__/
 # environment variables
 .env
 
-#dataset
-dataset
+#dataset — ignore everything inside but keep the directory (track dataset/.gitkeep)
+dataset/**
 
 #visualizing figures
 figures
 
 #logger
-logs/project.log
+logs/*.log
+
 
 #notebook
 demo.ipynb
+
+#model registry 
+registry
