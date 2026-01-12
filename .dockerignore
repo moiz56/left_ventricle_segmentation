@@ -29,6 +29,11 @@ mlruns
 #inference folder
 app/inference_results
 
-# miscellaneous files
-registry.zip
-inference-service.tar
+#pyproject
+pyproject.toml
+
+#Readme
+README.md
+
+#gitignore
+.gitignore

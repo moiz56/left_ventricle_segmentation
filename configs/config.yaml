@@ -6,4 +6,7 @@ batch_size: 16
 num_epochs: 50
 
 model:
-  name: attention_unet          # or attention_unet_extended
+  name: attention_unet_extended          # or attention_unet_extended
+
+inference_model:
+  name: attention_unet_extended

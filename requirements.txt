@@ -1,11 +1,15 @@
-torch
-torchvision
+# torch
+# torchvision
+PyYAML
 monai
 transformers
 huggingface_hub
-kaggle
-kagglehub
 dotenv
 nibabel
 matplotlib
 scikit-image
+mlflow
+fastapi 
+uvicorn
+python-multipart
+pydantic

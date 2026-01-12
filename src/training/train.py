@@ -1,3 +1,5 @@
+import mlflow
+
 import torch
 from torch import optim
 from torch.utils.data import DataLoader
@@ -40,6 +42,9 @@ def train_model(model, train_loader, val_loader, optimizer, device, num_epochs=5
     history = {"train_loss": [], "val_loss": [], "val_dice": []}
     best_loss = float("inf")
 
+    mlflow.log_param("num_epochs",num_epochs)
+    mlflow.log_param("loss_function", "DiceCELoss")
+
     for epoch in range(num_epochs):
         model.train()
         train_loss = 0.0
@@ -81,6 +86,7 @@ def train_model(model, train_loader, val_loader, optimizer, device, num_epochs=5
             try:
                 torch.save(model.state_dict(), save_path)
                 logger.info("Saved new best model at epoch %d with val_loss %.4f", epoch + 1, best_loss)
+                mlflow.log_metric("best_loss",best_loss)
             except Exception as e:
                 logger.exception("Failed to save model: %s", e)
 
@@ -88,6 +94,10 @@ def train_model(model, train_loader, val_loader, optimizer, device, num_epochs=5
             "Epoch [%d/%d] | Train Loss: %.6f | Val Loss: %.6f | Val Dice: %.4f",
             epoch + 1, num_epochs, train_loss, val_loss, val_dice
         )
+
+        mlflow.log_metric("train_loss", train_loss, step=epoch + 1)
+        mlflow.log_metric("val_loss", val_loss, step=epoch + 1)
+        mlflow.log_metric("val_dice", val_dice, step=epoch + 1)
 
         history["train_loss"].append(train_loss)
         history["val_loss"].append(val_loss)

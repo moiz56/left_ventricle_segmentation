@@ -25,7 +25,7 @@ MODEL_REGISTRY = {
     "attention_unet_extended": attention_unet_extended_channels
 }
 
-def get_model(name, in_channels=1, out_channels=2):
+def get_model(name = "attention_unet_extended", in_channels=1, out_channels=2):
     """
     Returns the model instance given its name.
     Raises ValueError if model name is invalid.
